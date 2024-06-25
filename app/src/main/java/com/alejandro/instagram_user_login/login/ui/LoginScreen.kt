@@ -39,6 +39,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -91,12 +92,12 @@ fun Footer(modifier: Modifier) {
 fun SignUp() {
     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
         Text(
-            text = "Don't have an account?",
+            text = stringResource(id = R.string.sign_app1),
             fontSize = 12.sp,
             color = Color(0xFFB5B5B5)
         )
         Text(
-            text = "Sign up.",
+            text = stringResource(id = R.string.sign_app2),
             Modifier.padding(horizontal = 8.dp),
             fontSize = 12.sp,
             fontWeight = FontWeight.Bold,
@@ -141,11 +142,11 @@ fun SocialLogin() {
     ) {
         Image(
             painter = painterResource(id = R.drawable.fb),
-            contentDescription = "Social login fb",
+            contentDescription = stringResource(id = R.string.sociallogin_content_description),
             modifier = Modifier.size(16.dp)
         )
         Text(
-            text = "Continue as Aris",
+            text = stringResource(id = R.string.social_login),
             fontSize = 14.sp,
             fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(horizontal = 8.dp),
@@ -193,13 +194,13 @@ fun LoginButton(loginEnable: Boolean, loginViewModel: LoginViewModel) {
             disabledContentColor = Color.White
         )
     ) {
-        Text(text = "Log In")
+        Text(text = stringResource(id = R.string.login))
     }
 }
 @Composable
 fun ForgotPassword(modifier: Modifier) {
     Text(
-        text = "Forgot password?",
+        text = stringResource(id = R.string.forgot_password),
         fontSize = 12.sp,
         fontWeight = FontWeight.Bold,
         color = Color(0xFF4EA8E9),
@@ -213,7 +214,7 @@ fun Password(password: String, onTextChanged: (String) -> Unit) {
         value = password,
         onValueChange = { onTextChanged(it) },
         modifier = Modifier.fillMaxWidth(),
-        placeholder = { Text("Password") },
+        placeholder = { Text(stringResource(id = R.string.password)) },
         colors = TextFieldDefaults.colors(
             focusedTextColor = Color(0xFFB2B2B2),
             unfocusedTextColor = Color(0xFFB2B2B2),
@@ -232,7 +233,9 @@ fun Password(password: String, onTextChanged: (String) -> Unit) {
                 Icons.Filled.Visibility
             }
             IconButton(onClick = { passwordVisibility = !passwordVisibility }) {
-                Icon(imageVector = imagen, contentDescription = "show password")
+                Icon(imageVector = imagen, contentDescription = stringResource(
+                    id = R.string.password_content_description
+                ))
             }
         },
         visualTransformation = if (passwordVisibility) {
@@ -248,7 +251,7 @@ fun Email(email: String, onTextChanged: (String) -> Unit) {
         value = email,
         onValueChange = { onTextChanged(it) },
         modifier = Modifier.fillMaxWidth(),
-        placeholder = { Text(text = "Email") },
+        placeholder = { Text(text = stringResource(id = R.string.email)) },
         maxLines = 1,
         singleLine = true,
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
@@ -266,7 +269,7 @@ fun Email(email: String, onTextChanged: (String) -> Unit) {
 fun ImageLogo(modifier: Modifier) {
     Image(
         painter = painterResource(id = R.drawable.insta),
-        contentDescription = "logo",
+        contentDescription = stringResource(id = R.string.logo_content_description),
         modifier = modifier
     )
 }
@@ -275,6 +278,6 @@ fun Header(modifier: Modifier) {
     val activity = LocalContext.current as Activity
     Icon(
         imageVector = Icons.Default.Close,
-        contentDescription = "close app",
+        contentDescription = stringResource(id = R.string.closeapp_content_description),
         modifier = modifier.clickable { activity.finish() })
 }
