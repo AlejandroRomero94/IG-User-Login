@@ -1,5 +1,6 @@
 package com.alejandro.instagram_user_login.login.domain
 
+import com.alejandro.instagram_user_login.login.data.LoginRepository
 import javax.inject.Inject
 
 class LoginUseCase @Inject constructor(private val repository:LoginRepository) {
