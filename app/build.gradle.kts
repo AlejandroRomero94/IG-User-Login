@@ -59,8 +59,11 @@ dependencies {
     //Dagger Hilt
     implementation(libs.hilt.android)
     implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.androidx.runtime.livedata)
     kapt (libs.hilt.android.compiler)
 
+//Material Icons Extended
+    implementation ("androidx.compose.material:material-icons-extended:1.0.1")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
