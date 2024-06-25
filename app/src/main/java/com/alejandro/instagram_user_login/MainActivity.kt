@@ -26,10 +26,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             Instagram_User_LoginTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    //Greeting(
-                      //  name = "Android",
-                    //modifier = Modifier.padding(innerPadding)
-                    //)
+
                     LoginScreen(
                         loginViewModel,
                         modifier=Modifier.padding(innerPadding)
