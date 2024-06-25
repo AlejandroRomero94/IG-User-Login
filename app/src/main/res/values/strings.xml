@@ -2,7 +2,7 @@
     <string name="app_name">IGLoginApp</string>
 
     <!--Login Screen -->
-    <string name="sign_app1">Don't have an account?</string>
+    <string name="sign_app1">Don\'t have an account?</string>
     <string name="sign_app2">Sign up.</string>
     <string name="social_login">Continue as Alejandro</string>
     <string name="sociallogin_content_description">Social login fb</string>
@@ -11,6 +11,6 @@
     <string name="password">password</string>
     <string name="password_content_description">show password</string>
     <string name="email">email</string>
-    <string name="logo_content_description">lgo</string>
+    <string name="logo_content_description">logo</string>
     <string name="closeapp_content_description">close app</string>
 </resources>
