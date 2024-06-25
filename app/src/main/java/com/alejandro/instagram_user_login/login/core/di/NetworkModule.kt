@@ -1,5 +1,6 @@
 package com.alejandro.instagram_user_login.login.core.di
 
+import com.alejandro.instagram_user_login.login.data.network.LoginClient
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -21,6 +22,12 @@ class NetworkModule {
             .baseUrl("https://run.mocky.io/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
+    }
+    @Singleton
+    @Provides
+
+    fun provideLoginClient(retrofit:Retrofit): LoginClient {
+        return  retrofit.create(LoginClient::class.java)
     }
 
 }
